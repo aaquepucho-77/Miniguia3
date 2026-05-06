@@ -1,0 +1,221 @@
+```html id="modulo2zaranda"
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 2 - Motores y Movimiento</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #eef2f7;
+}
+
+header {
+    background: linear-gradient(90deg, #2c7a7b, #3182ce);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+button {
+    padding: 10px 15px;
+    background: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #2b6cb0;
+}
+
+.back-btn {
+    background: #e53e3e;
+}
+
+.back-btn:hover {
+    background: #c53030;
+}
+
+iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: 10px;
+    border: none;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.close {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Módulo 2: Motores y Movimiento</h1>
+<p>Aprendemos cómo los motores generan movimiento y vibración en la zaranda</p>
+</header>
+
+<div class="container">
+
+<button class="back-btn" onclick="goBack()">⬅ Volver</button>
+
+<div class="card">
+<h2>¿Qué es un motor eléctrico?</h2>
+<p>
+Un motor eléctrico es un dispositivo que transforma la energía eléctrica en movimiento.
+En la zaranda, el motor genera el movimiento que luego se convierte en vibración.
+</p>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Electric_motor_animation.gif" alt="Motor eléctrico">
+
+<button onclick="openModal('modal1')">Ver más</button>
+</div>
+
+<div class="card">
+<h2>Movimiento rotativo a vibratorio</h2>
+<p>
+El motor gira (movimiento rotativo), pero necesitamos vibración. Esto se logra usando un peso descentrado (excéntrica).
+</p>
+
+<button onclick="openModal('modal2')">Ver detalles</button>
+</div>
+
+<div class="card">
+<h2>Actividad práctica</h2>
+<p>
+Construye un sistema vibrador usando un motor y un objeto desbalanceado.
+</p>
+
+<button onclick="openModal('modal3')">Ver actividad</button>
+</div>
+
+<div class="card">
+<h2>🎥 Video explicativo</h2>
+
+<iframe src="https://www.youtube.com/embed/6qR8E5c4f6w" allowfullscreen></iframe>
+
+</div>
+
+<div class="card">
+<h2>🧠 Actividad interactiva (H5P)</h2>
+
+<iframe src="https://h5p.org/h5p/embed/1290981234567890456"></iframe>
+
+</div>
+
+</div>
+
+<!-- MODALES -->
+
+<div id="modal1" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal1')">&times;</span>
+<h3>Más sobre motores</h3>
+<p>
+Los motores eléctricos pueden encontrarse en ventiladores, licuadoras o lavadoras.
+Funcionan gracias a la interacción entre electricidad y magnetismo.
+</p>
+</div>
+</div>
+
+<div id="modal2" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal2')">&times;</span>
+<h3>Conversión de movimiento</h3>
+<p>
+Una excéntrica es un peso colocado fuera del centro del eje del motor.
+Al girar, genera vibración debido al desequilibrio.
+</p>
+</div>
+</div>
+
+<div id="modal3" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal3')">&times;</span>
+<h3>Actividad sugerida</h3>
+<p>
+1. Consigue un motor pequeño.<br>
+2. Coloca un tornillo o piedra en un lado del eje.<br>
+3. Enciéndelo.<br>
+4. Observa la vibración.<br>
+5. Cambia el peso y compara resultados.
+</p>
+</div>
+</div>
+
+<script>
+function openModal(id) {
+    document.getElementById(id).style.display = "block";
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+window.onclick = function(event) {
+    let modals = document.getElementsByClassName("modal");
+    for (let i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+            modals[i].style.display = "none";
+        }
+    }
+}
+
+function goBack() {
+    window.history.back();
+}
+</script>
+
+</body>
+</html>
+```

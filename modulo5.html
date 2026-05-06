@@ -1,0 +1,263 @@
+```html id="modulo5zaranda"
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 5 - Fabricación y Ensamblaje</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #eef2f7;
+}
+
+header {
+    background: linear-gradient(90deg, #2c7a7b, #3182ce);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+button {
+    padding: 10px 15px;
+    background: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #2b6cb0;
+}
+
+.back-btn {
+    background: #e53e3e;
+}
+
+.back-btn:hover {
+    background: #c53030;
+}
+
+iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: 10px;
+    border: none;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.close {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Reto */
+.reto {
+    background: #e6fffa;
+    border-left: 6px solid #38b2ac;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+/* Seguridad */
+.seguridad {
+    background: #ffe6e6;
+    border-left: 6px solid #e53e3e;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Módulo 5: Fabricación y Ensamblaje</h1>
+<p>Construimos la zaranda mecánica funcional a partir del prototipo</p>
+</header>
+
+<div class="container">
+
+<button class="back-btn" onclick="goBack()">⬅ Volver</button>
+
+<div class="card">
+<h2>¿Qué es la fabricación?</h2>
+<p>
+Es el proceso de construir la máquina real utilizando materiales resistentes como madera o metal.
+</p>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Workshop_carpentry.jpg" alt="Fabricación">
+
+<button onclick="openModal('modal1')">Ver más</button>
+</div>
+
+<div class="card">
+<h2>Ensamblaje de la zaranda</h2>
+<p>
+En esta etapa unimos todas las partes: estructura, motor, malla y sistema de vibración.
+</p>
+
+<button onclick="openModal('modal2')">Ver pasos</button>
+</div>
+
+<div class="card">
+<h2>Ajuste de vibración</h2>
+<p>
+Es clave lograr la vibración adecuada para mejorar la separación de productos.
+</p>
+
+<button onclick="openModal('modal3')">Ver ajustes</button>
+</div>
+
+<div class="card seguridad">
+<h2>⚠ Seguridad en el taller</h2>
+<ul>
+<li>Usar guantes y lentes de protección</li>
+<li>No tocar cables sin supervisión</li>
+<li>Apagar el equipo antes de ajustar</li>
+<li>Trabajar en equipo y con supervisión docente</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🎥 Video explicativo</h2>
+
+<iframe src="https://www.youtube.com/embed/9xwazD5SyVg" allowfullscreen></iframe>
+
+</div>
+
+<div class="card">
+<h2>🧠 Actividad interactiva (H5P)</h2>
+
+<iframe src="https://h5p.org/h5p/embed/1290981234567891222"></iframe>
+
+</div>
+
+<div class="card reto">
+<h2>🚀 Reto de Ingeniería</h2>
+<p>
+Optimiza tu zaranda mecánica para mejorar su funcionamiento.
+</p>
+<ul>
+<li>¿La vibración es suficiente?</li>
+<li>¿Se pierde producto?</li>
+<li>¿Se puede hacer más estable?</li>
+</ul>
+<p>
+👉 Propón mejoras reales y aplícalas a tu máquina.
+</p>
+</div>
+
+</div>
+
+<!-- MODALES -->
+
+<div id="modal1" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal1')">&times;</span>
+<h3>Más sobre fabricación</h3>
+<p>
+La fabricación implica usar herramientas y materiales reales para construir una máquina funcional.
+</p>
+</div>
+</div>
+
+<div id="modal2" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal2')">&times;</span>
+<h3>Pasos de ensamblaje</h3>
+<p>
+1. Construir la estructura<br>
+2. Instalar la malla<br>
+3. Colocar el motor<br>
+4. Ajustar la excéntrica<br>
+5. Conectar el sistema eléctrico
+</p>
+</div>
+</div>
+
+<div id="modal3" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal3')">&times;</span>
+<h3>Ajustes de vibración</h3>
+<p>
+- Cambiar peso de la excéntrica<br>
+- Ajustar la inclinación<br>
+- Regular la velocidad del motor
+</p>
+</div>
+</div>
+
+<script>
+function openModal(id) {
+    document.getElementById(id).style.display = "block";
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+window.onclick = function(event) {
+    let modals = document.getElementsByClassName("modal");
+    for (let i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+            modals[i].style.display = "none";
+        }
+    }
+}
+
+function goBack() {
+    window.history.back();
+}
+</script>
+
+</body>
+</html>
+```

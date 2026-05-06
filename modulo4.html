@@ -1,0 +1,246 @@
+```html id="modulo4zaranda"
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 4 - Prototipado</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #eef2f7;
+}
+
+header {
+    background: linear-gradient(90deg, #2c7a7b, #3182ce);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+button {
+    padding: 10px 15px;
+    background: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #2b6cb0;
+}
+
+.back-btn {
+    background: #e53e3e;
+}
+
+.back-btn:hover {
+    background: #c53030;
+}
+
+iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: 10px;
+    border: none;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.close {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Reto */
+.reto {
+    background: #fff3cd;
+    border-left: 6px solid #f6ad55;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Módulo 4: Prototipado</h1>
+<p>Construimos y probamos la primera versión de la zaranda mecánica</p>
+</header>
+
+<div class="container">
+
+<button class="back-btn" onclick="goBack()">⬅ Volver</button>
+
+<div class="card">
+<h2>¿Qué es un prototipo?</h2>
+<p>
+Un prototipo es una versión inicial de una máquina que permite probar ideas antes de construir el modelo final.
+</p>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Prototype_example.jpg" alt="Prototipo">
+
+<button onclick="openModal('modal1')">Ver más</button>
+</div>
+
+<div class="card">
+<h2>Construcción del prototipo</h2>
+<p>
+En este módulo construiremos una mini zaranda usando materiales simples como madera, cartón o plástico.
+</p>
+
+<button onclick="openModal('modal2')">Ver detalles</button>
+</div>
+
+<div class="card">
+<h2>Evaluación de eficiencia</h2>
+<p>
+Probamos qué tan bien separa el prototipo los productos según su tamaño.
+</p>
+
+<button onclick="openModal('modal3')">Ver evaluación</button>
+</div>
+
+<div class="card">
+<h2>🎥 Video explicativo</h2>
+
+<iframe src="https://www.youtube.com/embed/3V5G9u9pFzM" allowfullscreen></iframe>
+
+</div>
+
+<div class="card">
+<h2>🧠 Actividad interactiva (H5P)</h2>
+
+<iframe src="https://h5p.org/h5p/embed/1290981234567890999"></iframe>
+
+</div>
+
+<div class="card reto">
+<h2>🚀 Reto de Ingeniería</h2>
+<p>
+Diseña un prototipo de zaranda que mejore la separación de productos agrícolas.
+</p>
+<ul>
+<li>¿Qué material funciona mejor?</li>
+<li>¿Qué inclinación mejora el rendimiento?</li>
+<li>¿Cómo reducir la pérdida de producto?</li>
+</ul>
+<p>
+👉 Compara tu diseño con el de tus compañeros y propón mejoras.
+</p>
+</div>
+
+</div>
+
+<!-- MODALES -->
+
+<div id="modal1" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal1')">&times;</span>
+<h3>Más sobre prototipos</h3>
+<p>
+Los prototipos permiten probar ideas rápidamente y detectar errores antes de construir la versión final.
+</p>
+</div>
+</div>
+
+<div id="modal2" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal2')">&times;</span>
+<h3>Detalles de construcción</h3>
+<p>
+Materiales sugeridos:<br>
+- Madera o cartón<br>
+- Malla metálica<br>
+- Motor pequeño<br>
+- Resortes o caucho
+</p>
+</div>
+</div>
+
+<div id="modal3" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal3')">&times;</span>
+<h3>Evaluación</h3>
+<p>
+Prueba tu prototipo con diferentes productos.<br>
+Mide:<br>
+- Tiempo de separación<br>
+- Precisión<br>
+- Cantidad de desperdicio
+</p>
+</div>
+</div>
+
+<script>
+function openModal(id) {
+    document.getElementById(id).style.display = "block";
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+window.onclick = function(event) {
+    let modals = document.getElementsByClassName("modal");
+    for (let i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+            modals[i].style.display = "none";
+        }
+    }
+}
+
+function goBack() {
+    window.history.back();
+}
+</script>
+
+</body>
+</html>
+```
